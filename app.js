@@ -82,19 +82,24 @@ document.addEventListener('DOMContentLoaded', () =>{
     let cards = document.querySelectorAll('img')
     const optionOneId = cardsChosenId[0]
     const optionTwoId = cardsChosenId[1]
-    if (cardsChosen[0] === cardsChosen[1]) {
+  if (cardsChosen[0] === cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]) {
       alert('You found a match')
       cards[optionOneId].setAttribute('src', 'images/white.jpg')
       cards[optionTwoId].setAttribute('src', 'images/white.jpg')
+      cards[optionOneId].removeEventListener('click', flipCard)
+      cards[optionTwoId].removeEventListener('click', flipCard)
       cardsWon.push(cardsChosen)
       right.play()
+      console.log(cardsChosen)
+      console.log(cardsChosenId)
     } else {
       cards[optionOneId].setAttribute('src', 'images/memory.png')
       cards[optionTwoId].setAttribute('src', 'images/memory.png')
       alert('Sorry, try again')
       wrong.play()
+      console.log(cardsChosen)
+      console.log(cardsChosenId)
     }
-
     cardsChosen = []
     cardsChosenId = []
     resultDisplay.textContent = cardsWon.length
@@ -116,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () =>{
       attemptCounter()
     }
   }
+
 
   function attemptCounter() {
     attemptCount++
