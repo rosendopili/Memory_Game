@@ -64,11 +64,13 @@ document.addEventListener('DOMContentLoaded', () =>{
   const blop = new Audio("/sounds/blop.wav")
   const wrong = new Audio("/sounds/no-dear.wav")
   const right = new Audio("/sounds/cheer.wav")
+  const start = new Audio("/sounds/start.wav")
 
   function createBoard() {
+    start.play()
     for (let i = 0; i < cardArray.length; i++) {
       let card = document.createElement('img')
-      card.setAttribute('src', 'images/pattern.jpg')
+      card.setAttribute('src', 'images/memory.png')
       card.setAttribute('class', 'game-card')
       card.setAttribute('data-id', i)
       card.addEventListener('click', flipCard)
@@ -87,8 +89,8 @@ document.addEventListener('DOMContentLoaded', () =>{
       cardsWon.push(cardsChosen)
       right.play()
     } else {
-      cards[optionOneId].setAttribute('src', 'images/pattern.jpg')
-      cards[optionTwoId].setAttribute('src', 'images/pattern.jpg')
+      cards[optionOneId].setAttribute('src', 'images/memory.png')
+      cards[optionTwoId].setAttribute('src', 'images/memory.png')
       alert('Sorry, try again')
       wrong.play()
     }

@@ -1,19 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Rokkitt:wght@200;500&display=swap');
+
+/* font-family: 'Comfortaa', cursive;
+font-family: 'Rokkitt', serif; */
+
+:root {
+  --pink: #fff6f4;
+  --orange: #eb9178;
+  --sky-blue: #8added;
+  --light-blue: #d9e1f0;
+  --navy: #2a3a6b;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: arial;
+  font-family: 'Rokkitt', serif;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient( var(--sky-blue), var(--light-blue), var(--orange));
+  background-repeat: no-repeat;
 }
 
 body {
-  width: 100%
-  height: 100vh;
+  margin: auto 0;
+}
+
+.content {
+  width: 600px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px auto;
+  background-image: linear-gradient(45deg, var(--pink), var(--light-blue));
+  border-radius: 20px;
+}
+
+h1 {
+  font-family: 'Comfortaa', cursive;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 5px;
+  margin-top: 10px;
+  color: var(--orange);
+}
+
+.stats-box {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 440px;
+  height: 80px;
+  margin: 10px auto;
+  border-radius: 10px;
 }
 
 h3 {
-  font-size: 20px;
-  margin: 0 auto;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 10px;
   width: 430px;
+  color: var(--navy);
 }
 
 .grid {
@@ -32,4 +83,17 @@ img {
   border-radius: 5px;
   box-shadow: 0px 5px 5px gray;
   margin: 5px;
+}
+
+#reset {
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--light-blue);
+  color: var(--navy);
+  width: 100px;
+  line-height: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px gray;
+  margin: 10px auto 20px;
 }
