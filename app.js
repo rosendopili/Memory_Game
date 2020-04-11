@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', () =>{
   let cardsChosen = []
   let cardsChosenId = []
   const cardsWon = []
-  const applause = new Audio("/sounds/applause.wav")
-  const blop = new Audio("/sounds/blop.wav")
-  const wrong = new Audio("/sounds/no-dear.wav")
-  const right = new Audio("/sounds/cheer.wav")
-  const start = new Audio("/sounds/start.wav")
+  const applause = new Audio("applause.wav")
+  const blop = new Audio("blop.wav")
+  const wrong = new Audio("no-dear.wav")
+  const right = new Audio("cheer.wav")
+  const start = new Audio("start.wav")
 
   function createBoard() {
     start.play()
