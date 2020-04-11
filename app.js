@@ -82,6 +82,12 @@ document.addEventListener('DOMContentLoaded', () =>{
     let cards = document.querySelectorAll('img')
     const optionOneId = cardsChosenId[0]
     const optionTwoId = cardsChosenId[1]
+  if (cardsChosenId[0] === cardsChosenId[1]){
+    alert('Sorry, you have to pick two different cards!')
+    cards[optionOneId].setAttribute('src', 'images/memory.png')
+    cards[optionTwoId].setAttribute('src', 'images/memory.png')
+    wrong.play()
+  }
   if (cardsChosen[0] === cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]) {
       alert('You found a match')
       cards[optionOneId].setAttribute('src', 'images/white.jpg')
@@ -90,15 +96,13 @@ document.addEventListener('DOMContentLoaded', () =>{
       cards[optionTwoId].removeEventListener('click', flipCard)
       cardsWon.push(cardsChosen)
       right.play()
-      console.log(cardsChosen)
-      console.log(cardsChosenId)
-    } else {
+      attemptCounter()
+    } else if (cardsChosen[0] !== cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]){
       cards[optionOneId].setAttribute('src', 'images/memory.png')
       cards[optionTwoId].setAttribute('src', 'images/memory.png')
       alert('Sorry, try again')
       wrong.play()
-      console.log(cardsChosen)
-      console.log(cardsChosenId)
+      attemptCounter()
     }
     cardsChosen = []
     cardsChosenId = []
@@ -118,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     blop.play()
     if (cardsChosen.length === 2) {
       setTimeout(checkForMatch, 500)
-      attemptCounter()
     }
   }
 
