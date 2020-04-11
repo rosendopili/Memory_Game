@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () =>{
   const cardsWon = []
   const applause = new Audio("/sounds/applause.wav")
   const blop = new Audio("/sounds/blop.wav")
+  const wrong = new Audio("/sounds/no-dear.wav")
+  const right = new Audio("/sounds/cheer.wav")
 
   function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
@@ -83,10 +85,12 @@ document.addEventListener('DOMContentLoaded', () =>{
       cards[optionOneId].setAttribute('src', 'images/white.jpg')
       cards[optionTwoId].setAttribute('src', 'images/white.jpg')
       cardsWon.push(cardsChosen)
+      right.play()
     } else {
       cards[optionOneId].setAttribute('src', 'images/pattern.jpg')
       cards[optionTwoId].setAttribute('src', 'images/pattern.jpg')
       alert('Sorry, try again')
+      wrong.play()
     }
 
     cardsChosen = []
