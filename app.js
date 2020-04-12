@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () =>{
   const cardsWon = []
   const applause = new Audio("applause.wav")
   const blop = new Audio("blop.wav")
-  const wrong = new Audio("no-dear.wav")
-  const right = new Audio("cheer.wav")
+  const wrong = new Audio("wrong.wav")
+  const right = new Audio("right.wav")
   const start = new Audio("start.wav")
 
   function createBoard() {
