@@ -136,6 +136,8 @@ document.addEventListener('DOMContentLoaded', () =>{
   };
 
 createBoard()
-  //current code allows you to choose boxes that have already been matched. code allows you to double click an image and receive a match.  will need to lock the correct selections.
+
+//needs custom alert modals
+//did not build for mobile first **reminder to self: ALWAYS BUILD FOR MOBILE FIRST! 
 
 })
