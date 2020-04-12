@@ -9,6 +9,10 @@ font-family: 'Rokkitt', serif; */
   --sky-blue: #8added;
   --light-blue: #d9e1f0;
   --navy: #2a3a6b;
+  --blue: #0080FF;
+  --red: #FF4F4F;
+  --green: #21B30B;
+
 }
 
 * {
@@ -52,6 +56,7 @@ h1 {
 .stats-box {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   background-color: white;
   width: 440px;
   height: 80px;
@@ -62,9 +67,9 @@ h1 {
 
 h3 {
   font-size: 16px;
-  margin: 5px 0 0 10px; 
   width: 430px;
   color: var(--navy);
+  margin-left: 10px;
 }
 
 .grid {
@@ -99,6 +104,23 @@ img {
   border-radius: 5px;
   box-shadow: 0 5px 5px gray;
   margin: 10px auto 20px;
+  font-weight: bold;
+}
+
+span{
+  font-weight: normal;
+}
+
+#result {
+  color: var(--green);
+}
+
+#attempt {
+  color: var(--red);
+}
+
+#timer {
+  color: var(--blue);
 }
 
 @media only screen and (max-width: 430px) {
