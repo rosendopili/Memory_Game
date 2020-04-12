@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     } else if (cardsWon.length === cardArray.length/2
                 && (attemptCount > 12
-                && attemptCount < 15)){
+                && attemptCount <= 15)){
 
       resultDisplay.textContent = 'Good Job but you can do better!'
 
