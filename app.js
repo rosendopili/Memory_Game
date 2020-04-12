@@ -51,26 +51,30 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
   ]
 
+  //randomize cards
   cardArray.sort(() => 0.5 - Math.random())
 
+  //DOM constants
   const grid = document.querySelector('.grid')
   const resultDisplay = document.getElementById('result')
   const attemptDisplay = document.getElementById('attempt')
   const timer = document.getElementById("timer");
-  const cardsWon = []
 
+  //storage variables
+  const cardsWon = []
   let second = 0
   let attemptCount = 0
   let cardsChosen = []
   let cardsChosenId = []
 
-
+  //sound effect constants
   const applause = new Audio("applause.wav")
   const blop = new Audio("blop.wav")
   const wrong = new Audio("wrong.wav")
   const right = new Audio("right.wav")
   const start = new Audio("start.wav")
 
+  //gameboard function
   function createBoard() {
     start.play()
     startTimer()
@@ -84,12 +88,15 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
   }
 
+  //timer function
   function startTimer(){
     interval = setInterval(function(){
         timer.innerHTML =  second +" seconds";
         second++;
     },1000);
   }
+
+  // check matching cards
 
   function checkForMatch() {
     let cards = document.querySelectorAll('img')
@@ -119,25 +126,35 @@ document.addEventListener('DOMContentLoaded', () =>{
     cardsChosenId = []
     resultDisplay.textContent = cardsWon.length + ' of 6 matches'
 
+    //End game summary
     if  (cardsWon.length === cardArray.length/2
-          && attemptCount < 12) {
+          && attemptCount <= 12) {
       resultDisplay.textContent = 'Amazing!! You\'re great at this!'
       clearInterval(interval)
       applause.play()
+
     } else if (cardsWon.length === cardArray.length/2
                 && (attemptCount > 12
                 && attemptCount < 15)){
+
       resultDisplay.textContent = 'Good Job but you can do better!'
+
       clearInterval(interval)
       applause.play()
+
     }else if (cardsWon.length === cardArray.length/2
               && attemptCount > 15){
+
       resultDisplay.textContent = '...Not bad but try focusing...'
+
       clearInterval(interval)
       applause.play()
+
     }else if (cardsWon.length === cardArray.length/2
               && attemptCount > 20){
+
       resultDisplay.textContent = '...I\'m surprised you remembered to finish...'
+
       clearInterval(interval)
       applause.play()
     }
@@ -156,12 +173,13 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
   }
 
-
+  //count the number of moves a player makes
   function attemptCounter() {
     attemptCount++
     attemptDisplay.textContent = attemptCount
   }
 
+  //reset button function
   document.getElementById("reset").onclick = function reset() {
     window.location.reload()
   };
