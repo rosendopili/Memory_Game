@@ -79,6 +79,7 @@ h3 {
 img {
   width: 100px;
   height: 100px;
+
 }
 
 .game-card {
@@ -101,7 +102,7 @@ img {
   margin: 10px auto 20px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 430px) {
 
   html {
     width: 100vw;
@@ -140,6 +141,6 @@ img {
     font-size: 36px;
     width: 70%;
     margin: 0 auto;
-    padding-top: 10px; 
+    padding-top: 10px;
   }
 }

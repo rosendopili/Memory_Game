@@ -138,6 +138,6 @@ document.addEventListener('DOMContentLoaded', () =>{
 createBoard()
 
 //needs custom alert modals
-//did not build for mobile first **reminder to self: ALWAYS BUILD FOR MOBILE FIRST! 
+//did not build for mobile first **reminder to self: ALWAYS BUILD FOR MOBILE FIRST!
 
 })
