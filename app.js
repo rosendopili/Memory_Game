@@ -96,13 +96,11 @@ document.addEventListener('DOMContentLoaded', () =>{
       cards[optionTwoId].removeEventListener('click', flipCard)
       cardsWon.push(cardsChosen)
       right.play()
-      attemptCounter()
     } else if (cardsChosen[0] !== cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]){
       cards[optionOneId].setAttribute('src', 'images/memory.png')
       cards[optionTwoId].setAttribute('src', 'images/memory.png')
       alert('Sorry, try again')
       wrong.play()
-      attemptCounter()
     }
     cardsChosen = []
     cardsChosenId = []
@@ -122,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     blop.play()
     if (cardsChosen.length === 2) {
       setTimeout(checkForMatch, 500)
+      attemptCounter()
     }
   }
 
