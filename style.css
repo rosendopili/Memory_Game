@@ -179,10 +179,12 @@ span{
 
   .grid {
     width: 80%;
+    height: auto;
   }
 
   .stats-box {
     width: 80%;
+    height: auto;
   }
 
   h3 {
@@ -198,5 +200,6 @@ span{
 
   .button-container {
     width: 70%;
+    height: auto; 
   }
 }
