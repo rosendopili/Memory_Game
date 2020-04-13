@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () =>{
   //gameboard function
   function createBoard() {
     start.play()
-    startTimer()
     for (let i = 0; i < cardArray.length; i++) {
       let card = document.createElement('img')
       card.setAttribute('src', 'images/memory.png')
@@ -91,9 +90,9 @@ document.addEventListener('DOMContentLoaded', () =>{
   //timer function
   function startTimer(){
     interval = setInterval(function(){
-        timer.innerHTML =  second +" seconds";
-        second++;
-    },1000);
+        timer.innerHTML =  second +" seconds"
+        second++
+    },1000)
   }
 
   // check matching cards
@@ -160,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
   }
 
+
   //flip your card
   function flipCard() {
     let cardId = this.getAttribute('data-id')
@@ -184,7 +184,14 @@ document.addEventListener('DOMContentLoaded', () =>{
     window.location.reload()
   };
 
+  document.getElementById("pause").onclick = function pause() {
+    alert('Hurry Back!')
+  };
+
+
 createBoard()
+startTimer()
+
 
 //needs custom alert modals
 //did not build for mobile first **reminder to self: ALWAYS BUILD FOR MOBILE FIRST!
