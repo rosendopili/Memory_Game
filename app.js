@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         timer.innerHTML =  second +" seconds"
           second++
     },1000)
+
   }
 
   // check matching cards

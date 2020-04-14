@@ -151,7 +151,7 @@ span{
   color: var(--blue);
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 450px) {
 
   html {
     width: 100vw;
@@ -171,7 +171,7 @@ span{
 
   img {
     width: 30%;
-    height: auto;
+    height: 80px;
   }
 
   .grid {
@@ -185,7 +185,7 @@ span{
   }
 
   h3 {
-    width: 80%;
+    width: 70%;
   }
 
   h1 {
