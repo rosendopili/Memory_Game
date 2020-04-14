@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Rokkitt:wght@200;500&display=swap');
 
-/* font-family: 'Comfortaa', cursive;
-font-family: 'Rokkitt', serif; */
-
 :root {
   --pink: #fff6f4;
   --orange: #eb9178;
@@ -200,6 +197,6 @@ span{
 
   .button-container {
     width: 70%;
-    height: auto; 
+    height: auto;
   }
 }

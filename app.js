@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () =>{
   function startTimer(){
     interval = setInterval(function(){
         timer.innerHTML =  second +" seconds"
-        second++
+          second++
     },1000)
   }
 
@@ -101,61 +101,49 @@ document.addEventListener('DOMContentLoaded', () =>{
     let cards = document.querySelectorAll('img')
     const optionOneId = cardsChosenId[0]
     const optionTwoId = cardsChosenId[1]
-  if (cardsChosenId[0] === cardsChosenId[1]){
-    alert('Sorry, you have to pick two different cards!')
-    cards[optionOneId].setAttribute('src', 'images/memory.png')
-    cards[optionTwoId].setAttribute('src', 'images/memory.png')
-    wrong.play()
-  }
-  if (cardsChosen[0] === cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]) {
-      cards[optionOneId].setAttribute('src', 'images/white.jpg')
-      cards[optionTwoId].setAttribute('src', 'images/white.jpg')
-      cards[optionOneId].removeEventListener('click', flipCard)
-      cards[optionTwoId].removeEventListener('click', flipCard)
-      cardsWon.push(cardsChosen)
-      right.play()
 
-    } else if (cardsChosen[0] !== cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]){
+    if (cardsChosenId[0] === cardsChosenId[1]){
+      alert('Sorry, you have to pick two different cards!')
       cards[optionOneId].setAttribute('src', 'images/memory.png')
       cards[optionTwoId].setAttribute('src', 'images/memory.png')
-      wrong.play()
-
+        wrong.play()
     }
-    cardsChosen = []
-    cardsChosenId = []
-    resultDisplay.textContent = cardsWon.length + ' of 6 matches'
+      if (cardsChosen[0] === cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]) {
+        cards[optionOneId].setAttribute('src', 'images/white.jpg')
+        cards[optionTwoId].setAttribute('src', 'images/white.jpg')
+        cards[optionOneId].removeEventListener('click', flipCard)
+        cards[optionTwoId].removeEventListener('click', flipCard)
+          cardsWon.push(cardsChosen)
+            right.play()
+    } else if (cardsChosen[0] !== cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]){
+        cards[optionOneId].setAttribute('src', 'images/memory.png')
+        cards[optionTwoId].setAttribute('src', 'images/memory.png')
+          wrong.play()
+    }
+        cardsChosen = []
+        cardsChosenId = []
+        resultDisplay.textContent = cardsWon.length + ' of 6 matches'
 
     //End game summary
-    if  (cardsWon.length === cardArray.length/2
-          && attemptCount <= 12) {
-      resultDisplay.textContent = 'Amazing!! You\'re great at this!'
-      clearInterval(interval)
-      applause.play()
+      if (cardsWon.length === cardArray.length/2 && attemptCount <= 12){
+        resultDisplay.textContent = 'Amazing!! You\'re great at this!'
+          clearInterval(interval)
+            applause.play()
 
-    } else if (cardsWon.length === cardArray.length/2
-                && (attemptCount > 12
-                && attemptCount <= 15)){
+    } else if (cardsWon.length === cardArray.length/2 && (attemptCount > 12 && attemptCount <= 15)){
+        resultDisplay.textContent = 'Good Job but you can do better!'
+          clearInterval(interval)
+            applause.play()
 
-      resultDisplay.textContent = 'Good Job but you can do better!'
+    } else if (cardsWon.length === cardArray.length/2 && attemptCount > 15){
+        resultDisplay.textContent = '...Not bad but try focusing...'
+          clearInterval(interval)
+            applause.play()
 
-      clearInterval(interval)
-      applause.play()
-
-    }else if (cardsWon.length === cardArray.length/2
-              && attemptCount > 15){
-
-      resultDisplay.textContent = '...Not bad but try focusing...'
-
-      clearInterval(interval)
-      applause.play()
-
-    }else if (cardsWon.length === cardArray.length/2
-              && attemptCount > 20){
-
-      resultDisplay.textContent = '...I\'m surprised you remembered to finish...'
-
-      clearInterval(interval)
-      applause.play()
+    } else if (cardsWon.length === cardArray.length/2 && attemptCount > 20){
+        resultDisplay.textContent = '...I\'m surprised you remembered to finish...'
+          clearInterval(interval)
+            applause.play()
     }
   }
 
@@ -169,14 +157,14 @@ document.addEventListener('DOMContentLoaded', () =>{
     blop.play()
     if (cardsChosen.length === 2) {
       attemptCounter()
-      setTimeout(checkForMatch, 500)
+        setTimeout(checkForMatch, 500)
     }
   }
 
   //count the number of moves a player makes
   function attemptCounter() {
     attemptCount++
-    attemptDisplay.textContent = attemptCount
+      attemptDisplay.textContent = attemptCount
   }
 
   //reset button function
@@ -191,9 +179,5 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 createBoard()
 startTimer()
-
-
-//needs custom alert modals
-//did not build for mobile first **reminder to self: ALWAYS BUILD FOR MOBILE FIRST!
 
 })
