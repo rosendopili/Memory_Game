@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () =>{
         timer.innerHTML =  second +" seconds"
           second++
     },1000)
-
   }
 
   // check matching cards
@@ -174,8 +173,14 @@ document.addEventListener('DOMContentLoaded', () =>{
   };
 
   document.getElementById("pause").onclick = function pause() {
-    alert('Hurry Back!')
+    // startTimer.pause()
+    alert('Hurry Back')
   };
+
+  // document.getElementById("play").onclick = function play() {
+  //   startTimer.resume()
+  // };
+
 
 
 createBoard()

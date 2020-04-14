@@ -171,12 +171,14 @@ span{
 
   img {
     width: 30%;
-    height: 80px;
+    height: auto;
+    max-height: 80px;
   }
 
   .grid {
     width: 80%;
     height: auto;
+    max-height: 400px;
   }
 
   .stats-box {
@@ -185,14 +187,15 @@ span{
   }
 
   h3 {
-    width: 70%;
+    width: 709%;
   }
 
   h1 {
-    font-size: 36px;
-    width: 70%;
+    font-size: 30px;
+    width: 80%;
     margin: 0 auto;
-    padding-top: 10px;
+    border: 1px solid red;
+
   }
 
   .button-container {
