@@ -89,6 +89,10 @@ img {
   margin-bottom: 10px;
   background-color: var(--sky-blue);
 }
+
+.no-click{
+  pointer-events: none;
+}
 /*
 @keyframes wiggle {
   from {

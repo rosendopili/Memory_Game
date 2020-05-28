@@ -102,12 +102,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     const optionOneId = cardsChosenId[0]
     const optionTwoId = cardsChosenId[1]
 
-    if (cardsChosenId[0] === cardsChosenId[1]){
-      alert('Sorry, you have to pick two different cards!')
-      cards[optionOneId].setAttribute('src', 'images/memory.png')
-      cards[optionTwoId].setAttribute('src', 'images/memory.png')
-        wrong.play()
-    }
       if (cardsChosen[0] === cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]) {
         cards[optionOneId].setAttribute('src', 'images/white.jpg')
         cards[optionTwoId].setAttribute('src', 'images/white.jpg')
@@ -118,6 +112,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     } else if (cardsChosen[0] !== cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]){
         cards[optionOneId].setAttribute('src', 'images/memory.png')
         cards[optionTwoId].setAttribute('src', 'images/memory.png')
+        cards[optionOneId].classList.remove('no-click') 
+        cards[optionTwoId].classList.remove('no-click')
           wrong.play()
     }
         cardsChosen = []
@@ -154,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     cardsChosen.push(cardArray[cardId].name)
     cardsChosenId.push(cardId)
     this.setAttribute('src', cardArray[cardId].img)
+    this.classList.add('no-click')
     blop.play()
     if (cardsChosen.length === 2) {
       attemptCounter()
