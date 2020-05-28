@@ -5,7 +5,7 @@
 * CSS
 * JavaScript
 
-**Intro**
+**Description**
 
 A card matching memory game.
 
